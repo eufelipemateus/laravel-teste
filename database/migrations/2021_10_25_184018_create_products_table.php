@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string("description");
             $table->double("price_anchor");
             $table->double("price_promotional");
+            $table->foreignId('product_payment_id');
             $table->timestamps();
         });
     }
