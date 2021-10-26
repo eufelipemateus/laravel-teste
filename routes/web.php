@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/payment/{id}','App\Http\Controllers\PaymentController@show')->name("show_payment");
+Route::get('/payments','App\Http\Controllers\PaymentController@list')->name("list_payment");
