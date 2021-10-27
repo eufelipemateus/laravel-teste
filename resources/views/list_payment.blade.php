@@ -15,16 +15,7 @@ extends('app')
 				</div>
 
                 <div class="card-body">
-					<div class="row">
-						<div class="col-md-9">
-						{{ $group->name }}
-						</div>
-
-
-					</div>
-
-
-                        <table class="table">
+					<table class="table">
                         <thead>
                             <tr>
                             <th scope="col">id</th>
@@ -52,7 +43,7 @@ extends('app')
 
 					        @endforeach
                         </tbody>
-                        </table>
+                    </table>
                 </div>
             </div>
         </div>
