@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-						<div class="col-md-7"><b>Group</b></div>
+						<div class="col-md-7"><b>Product</b></div>
 						{{-- <div class="col-md-3"><a href="{{ route('') }}"></a></div>
 						<div class="col-md-2"><a href="{{ route('') }}"></a></div>  --}}
 					</div>
