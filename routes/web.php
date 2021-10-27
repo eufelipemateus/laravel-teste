@@ -36,4 +36,4 @@ Route::get('/products','App\Http\Controllers\ProductController@list')->name("lis
 
 
 /// *agna produtos
-Route::get('/buy/{id}/{payment}','App\Http\Controllers\BuyController@show')->name("buy");
+Route::get('/buy/{id}','App\Http\Controllers\BuyController@show')->name("buy");

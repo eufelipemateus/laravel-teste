@@ -29,7 +29,7 @@ class Product extends Model
      * @return number
      */
     public function getPortionValueAttribute(){
-        return ($this->price_anchor/$this->payment->max_portion);
+        return ($this->price_anchor/$this->product_payment->max_portion);
     }
 
     /**
@@ -38,7 +38,7 @@ class Product extends Model
      * @return number
      */
     public function getPixDiscountAttribute(){
-        return    ($this->price_anchor * (($this->payment->pix_discount / 100 )+1));
+        return    ($this->price_anchor * (($this->product_payment->pix_discount / 100 )+1));
     }
 
     /**
@@ -47,6 +47,6 @@ class Product extends Model
      * @return number
      */
     public function getBilletDiscountAttribute(){
-        return    ($this->price_anchor * (($this->payment->billet_discount / 100 )+1));
+        return    ($this->price_anchor * (($this->product_payment->billet_discount / 100 )+1));
     }
 }

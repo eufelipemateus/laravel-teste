@@ -17,7 +17,7 @@ extends('app')
 
 
                     <h2>Cartão de Credito</h2>
-                    <p>{{ $product->payment->max_portion }}x  de {{$product->portion_value }}  </p>
+                    <p>{{ $product->product_payment->max_portion }}x  de {{$product->portion_value }}  </p>
 
                     <h2>Pix</h2>
                     <p>{{$product->pix_discount }}</p>
