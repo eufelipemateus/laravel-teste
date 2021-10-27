@@ -29,6 +29,7 @@ Route::get('/product/new','App\Http\Controllers\ProductController@new')->name("n
 Route::get('/product/{id}','App\Http\Controllers\ProductController@show')->name("show_product");
 Route::post('/product/{id}','App\Http\Controllers\ProductController@update')->name("update_product");
 Route::get('/product/{id}','App\Http\Controllers\ProductController@delete')->name("delete_product");
+Route::get('/product','App\Http\Controllers\ProductController@list')->name("list_product");
 
 
 
