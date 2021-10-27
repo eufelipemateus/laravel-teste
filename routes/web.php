@@ -22,8 +22,15 @@ Route::get('/', function () {
 Route::get('/payment/{id}','App\Http\Controllers\PaymentController@show')->name("show_payment");
 Route::post('/payment/{id}','App\Http\Controllers\PaymentController@update')->name("update_payment");
 Route::get('/payments','App\Http\Controllers\PaymentController@list')->name("list_payment");
+Route::get('/payment/{id}','App\Http\Controllers\PaymentController@delete')->name("delete_payment");
+
 
 Route::get('/product/new','App\Http\Controllers\ProductController@new')->name("new_product");
 Route::get('/product/{id}','App\Http\Controllers\ProductController@show')->name("show_product");
 Route::post('/product/{id}','App\Http\Controllers\ProductController@update')->name("update_product");
-Route::post('/product/{id}','App\Http\Controllers\ProductController@delete')->name("delete_product");
+Route::get('/product/{id}','App\Http\Controllers\ProductController@delete')->name("delete_product");
+
+
+
+/// *agna produtos
+Route::get('/buy/{id}/{payment}','App\Http\Controllers\BuyController@show')->name("buy")
