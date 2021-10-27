@@ -26,11 +26,11 @@ class ProductController extends Controller
      */
     public function create(Request $request){
 		$this->validate($request, [
-			'name' => 'required',
+			'name' => 'required|string',
             'types'=> "required",
-            'description'=>"required",
-            'price_anchor'=> 'required|number',
-            'price_promotional'=> 'required|number',
+            'description'=>"required|string",
+            'price_anchor'=> 'required',
+            'price_promotional'=> 'required',
             'product_payment_id' => 'required|exists:product_payments,id'
 
 		]);
@@ -62,13 +62,12 @@ class ProductController extends Controller
 		$product = Product::findOrFail($id);
 
 		$this->validate($request, [
-			'name' => 'required',
+			'name' => 'required|string',
             'types'=> "required",
-            'description'=>"required",
-            'price_anchor'=> 'required|number',
-            'price_promotional'=> 'required|number',
+            'description'=>"required|string",
+            'price_anchor'=> 'required',
+            'price_promotional'=> 'required',
             'product_payment_id' => 'required|exists:product_payments,id'
-
 		]);
 
 		$data = $request->all();

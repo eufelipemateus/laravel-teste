@@ -23,11 +23,11 @@ class PaymentController extends Controller
      */
     public function create(Request $request){
 		$this->validate($request, [
-			'name' => 'required|string',
-            'max_portion'=> 'required|number|max:36',
-            'pix_discount'=> 'required|number|min:0|max:100',
-            'billet_discount'=>'required|number|min:0|max:100',
-            'min_portion_value'=>'required|number'
+            'name' => 'required|string',
+            'max_portion'=> 'required|integer|max:36',
+            'pix_discount'=> 'required|integer|min:0|max:100',
+            'billet_discount'=>'required|integer|min:0|max:100',
+            'min_portion_value'=>'required|integer'
 		]);
 		$data = $request->all();
 		ProductPayment::create($data);
@@ -58,10 +58,10 @@ class PaymentController extends Controller
 
 		$this->validate($request, [
 			'name' => 'required|string',
-            'max_portion'=> 'required|number|max:36',
-            'pix_discount'=> 'required|number|min:0|max:100',
-            'billet_discount'=>'required|number|min:0|max:100',
-            'min_portion_value'=>'required|number'
+            'max_portion'=> 'required|integer|max:36',
+            'pix_discount'=> 'required|integer|min:0|max:100',
+            'billet_discount'=>'required|integer|min:0|max:100',
+            'min_portion_value'=>'required|integer'
 		]);
 
 		$data = $request->all();
