@@ -100,7 +100,7 @@
 							<div class="col-md-6">
 								<select id="product_payment_id"  class="form-control" name="product_payment_id" require >
                                     <option vlaue="null"></option>
-                                    @foreach($list as $payment)
+                                    @foreach($productPayments as $payment)
                                     <option   @if(isset($product->product_payment_id)) @if($product->product_payment_id==$payment->id)  selected  @endif  @endif   vlaue="{{ $payment->id }}">{{ $payment->name }}</option>
                                     @endforeach
                                 </select>
