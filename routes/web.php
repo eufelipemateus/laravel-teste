@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/payment/new','App\Http\Controllers\PaymentController@new')->name("new_payment");
-Route::get('/payment/new','App\Http\Controllers\PaymentController@create')->name("create_payment");
+Route::post('/payment/new','App\Http\Controllers\PaymentController@create')->name("create_payment");
 Route::get('/payment/{id}','App\Http\Controllers\PaymentController@show')->name("show_payment");
 Route::post('/payment/{id}','App\Http\Controllers\PaymentController@update')->name("update_payment");
 Route::get('/payments','App\Http\Controllers\PaymentController@list')->name("list_payment");
@@ -27,7 +27,7 @@ Route::get('/payment/{id}/delete','App\Http\Controllers\PaymentController@delete
 
 
 Route::get('/product/new','App\Http\Controllers\ProductController@new')->name("new_product");
-Route::get('/product/new','App\Http\Controllers\ProductController@create')->name("create_product");
+Route::post('/product/new','App\Http\Controllers\ProductController@create')->name("create_product");
 Route::get('/product/{id}','App\Http\Controllers\ProductController@show')->name("show_product");
 Route::post('/product/{id}','App\Http\Controllers\ProductController@update')->name("update_product");
 Route::get('/product/{id}/delete','App\Http\Controllers\ProductController@delete')->name("delete_product");
