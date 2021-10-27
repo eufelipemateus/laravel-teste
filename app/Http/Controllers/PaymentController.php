@@ -88,7 +88,7 @@ class PaymentController extends Controller
      * @return view -> list_payment
      */
     public function list(){
-		$data['list'] = IPTVCdn::all();
+		$data['list'] = ProductPayment::all();
 		return view("list_payment",$data);
 	}
 }
