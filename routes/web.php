@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/payment/new','App\Http\Controllers\PaymentController@new')->name("new_payment");
 Route::get('/payment/{id}','App\Http\Controllers\PaymentController@show')->name("show_payment");
 Route::post('/payment/{id}','App\Http\Controllers\PaymentController@update')->name("update_payment");
 Route::get('/payments','App\Http\Controllers\PaymentController@list')->name("list_payment");

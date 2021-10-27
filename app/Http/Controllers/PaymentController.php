@@ -8,6 +8,34 @@ use App\Models\ProductPayment;
 class PaymentController extends Controller
 {
     /**
+     * Show new payment page.
+     *
+     * @return view -> payment
+     */
+	public function new(){
+		return view("payment");
+	}
+
+    /**
+     * Save new data from new payment in database.
+     *
+     * @return redirect -> list_product
+     */
+    public function create(Request $request){
+		$this->validate($request, [
+			'name' => 'required|string',
+            'max_portion'=> 'required|number|max:36',
+            'pix_discount'=> 'required|number|min:0|max:100',
+            'billet_discount'=>'required|number|min:0|max:100',
+            'min_portion_value'=>'required|number'
+		]);
+		$data = $request->all();
+		ProductPayment::create($data);
+
+		return redirect()->route('list_payment');
+	}
+
+    /**
      * Show page from payment with id.
      *
      * @param $id - payment id
