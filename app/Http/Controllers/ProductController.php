@@ -31,7 +31,7 @@ class ProductController extends Controller
             'description'=>"required|string",
             'price_anchor'=> 'required',
             'price_promotional'=> 'required',
-            'product_payment_id' => 'required|exists:App\Models\ProductPayment,id'
+            'product_payment_id' => 'exists:App\Models\ProductPayment,id'
 
 		]);
 		$data = $request->all();
@@ -67,7 +67,7 @@ class ProductController extends Controller
             'description'=>"required|string",
             'price_anchor'=> 'required',
             'price_promotional'=> 'required',
-            'product_payment_id' => 'required|exists:App\Models\ProductPayment,id'
+            'product_payment_id' => 'exists:App\Models\ProductPayment,id'
 		]);
 
 		$data = $request->all();
