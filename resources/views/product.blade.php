@@ -84,7 +84,7 @@
                         <div class="form-group">
 							<label for="price_promotional" class="col-md-4 control-label">Preço Promocional </label>
 							<div class="col-md-6">
-								<input id="price_promotional" type="number"   class="form-control" name="price_promotional"value="@if(isset($product->price_promotional)){{ $productPayment->price_promotional }}@endif" placeholder="" required autofocus>
+								<input id="price_promotional" type="number"   class="form-control" name="price_promotional"value="@if(isset($product->price_promotional)){{ $product->price_promotional }}@endif" placeholder="" required autofocus>
                                 @if ($errors->has('price_promotional'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('price_promotional') }}</strong>
