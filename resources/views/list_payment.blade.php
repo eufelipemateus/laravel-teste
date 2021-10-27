@@ -9,8 +9,8 @@ extends('app')
 					<div class="row">
 						<div class="col-md-7"><b>Products Payments</b></div>
 
-						<div class="col-md-3"><a href="{{ route('list_channel') }}">Channels List</a></div>
-						<div class="col-md-2"><a href="{{ route('add_group') }}">Add Group</a></div>
+						<div class="col-md-3"><a href="{{ route('new_payment') }}">Add Payment</a></div>
+						<div class="col-md-2"><a href="{{ route('list_product') }}">List product</a></div>
 					</div>
 				</div>
 
