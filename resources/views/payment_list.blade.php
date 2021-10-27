@@ -1,4 +1,4 @@
-extends('app')
+@extends('app')
 
 @section('content')
 <div class="container">
@@ -26,21 +26,19 @@ extends('app')
                         </thead>
                         <tbody>
                             @foreach($list as $payment)
-
-                            <tr>
-                            <th scope="row">{{ $payment->id }}</th>
-                            <td>{{ $payment->name }}</td>
-                            <td>{{ $payment->max_portion }}</td>
-                            <td>
-                                <div class="col-md-2">
-						            <a href="{{ route('delete_payment',$payment->id)  }}">delete</a>
-						        </div>
-                                <div class="col-md-1">
-                                    <a href="{{ route('show_payment',$payment->id)  }}">edit</a>
-                                </div>
-                            </td>
-                            </tr>
-
+                                <tr>
+                                    <th scope="row">{{ $payment->id }}</th>
+                                    <td>{{ $payment->name }}</td>
+                                    <td>{{ $payment->max_portion }}</td>
+                                    <td>
+                                        <div class="col-md-2">
+                                            <a href="{{ route('delete_payment',$payment->id)  }}">delete</a>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <a href="{{ route('show_payment',$payment->id)  }}">edit</a>
+                                        </div>
+                                    </td>
+                                </tr>
 					        @endforeach
                         </tbody>
                     </table>
