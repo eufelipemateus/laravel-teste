@@ -95,7 +95,7 @@ class ProductController extends Controller
      */
     public function list(){
 		$data['list'] = Product::all();
-		return view("list_product",$data);
+		return view("product_list",$data);
 	}
 
 }

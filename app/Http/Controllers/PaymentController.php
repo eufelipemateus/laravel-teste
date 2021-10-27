@@ -89,6 +89,6 @@ class PaymentController extends Controller
      */
     public function list(){
 		$data['list'] = ProductPayment::all();
-		return view("list_payment",$data);
+		return view("payment_list",$data);
 	}
 }
