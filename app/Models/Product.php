@@ -22,4 +22,31 @@ class Product extends Model
     function product_payment(){
         return $this->belongsTo('App\Models\ProductPayment');
     }
+
+    /**
+     * Get the producs Portion value.
+     *
+     * @return number
+     */
+    public function getPortionValueAttribute(){
+        return ($this->price_anchor/$this->payment->max_portion);
+    }
+
+    /**
+     * Get the producs pixdiscoint.
+     *
+     * @return number
+     */
+    public function getPixDiscountAttribute(){
+        return    ($this->price_anchor * (($this->payment->pix_discount / 100 )+1))
+    }
+
+    /**
+     * Get the producs billet discount.
+     *
+     * @return number
+     */
+    public function getBilletDiscountAttribute(){
+        return    ($this->price_anchor * (($this->payment->billet_discount / 100 )+1))
+    }
 }

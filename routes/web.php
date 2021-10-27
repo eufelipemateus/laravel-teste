@@ -33,4 +33,4 @@ Route::get('/product/{id}','App\Http\Controllers\ProductController@delete')->nam
 
 
 /// *agna produtos
-Route::get('/buy/{id}/{payment}','App\Http\Controllers\BuyController@show')->name("buy")
+Route::get('/buy/{id}/{payment}','App\Http\Controllers\BuyController@show')->name("buy");
