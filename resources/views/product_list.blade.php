@@ -33,10 +33,10 @@
                             <td>{{ $product->price_anchor }}</td>
                             <td>{{ $product->price_promotional }}</td>
                             <td>
-                                <div class="col-md-2">
+                                <div class="col-md-6">
 						            <a href="{{ route('delete_product',$product->id)  }}">delete</a>
 						        </div>
-                                <div class="col-md-1">
+                                <div class="col-md-6">
                                     <a href="{{ route('show_product',$product->id)  }}">edit</a>
                                 </div>
                             </td>

@@ -60,9 +60,7 @@
                         <div class="form-group">
 							<label for="description" class="col-md-4 control-label">Descrição</label>
 							<div class="col-md-6">
-								<textarea id="description"  class="form-control" name="description" placeholder="" required autofocus>
-                                    @if(isset($product->description)){{ $product->description }}@endif
-                                </textarea>
+								<textarea id="description"  class="form-control" name="description" placeholder="" required autofocus> @if(isset($product->description)){{ $product->description }}@endif </textarea>
                                 @if ($errors->has('description'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>

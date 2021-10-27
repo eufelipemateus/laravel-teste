@@ -31,10 +31,10 @@
                                     <td>{{ $payment->name }}</td>
                                     <td>{{ $payment->max_portion }}</td>
                                     <td>
-                                        <div class="col-md-2">
+                                        <div class="col-md-6">
                                             <a href="{{ route('delete_payment',$payment->id)  }}">delete</a>
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-6">
                                             <a href="{{ route('show_payment',$payment->id)  }}">edit</a>
                                         </div>
                                     </td>
