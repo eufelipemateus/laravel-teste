@@ -99,7 +99,7 @@
 								<select id="product_payment_id"  class="form-control" name="product_payment_id" require >
                                     <option vlaue="null"></option>
                                     @foreach($productPayments as $payment)
-                                    <option   @if(isset($product->product_payment_id)) @if($product->product_payment_id==$payment->id)  selected  @endif  @endif   vlaue="{{ $payment->id }}">{{ $payment->name }}</option>
+                                    <option   @if(isset($product->product_payment_id)) @if($product->product_payment_id==$payment->id)  selected  @endif  @endif   value="{{ $payment->id }}">{{ $payment->name }}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('product_payment_id'))
