@@ -31,4 +31,15 @@ class PaymenttTest extends TestCase
         $response = $this->get("/payment/$payment_id");
         $response->assertStatus(200);
     }
+
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function test_payment_list()
+    {
+        $response = $this->get('/payments');
+        $response->assertStatus(200, "Rota list de pagamentos não passou no teste.");
+    }
 }
