@@ -40,7 +40,7 @@ class Product extends Model
      * @return number
      */
     public function getPixValueAttribute(){
-        return (isset($this->product_payment->pix_discount))?  ($this->price_anchor * (($this->product_payment->pix_discount / 100 )+1)) : $this->price_anchor;
+        return (isset($this->product_payment->pix_discount))?  ($this->price_anchor * ((100 - $this->product_payment->pix_discount) / 100 )) : $this->price_anchor;
     }
 
     /**
@@ -49,7 +49,7 @@ class Product extends Model
      * @return number
      */
     public function getBilletValueAttribute(){
-        return  (isset($this->product_payment->billet_discount))? ($this->price_anchor * (($this->product_payment->billet_discount / 100 )+1)) :  $this->price_anchor;
+        return (isset($this->product_payment->billet_discount))?  ($this->price_anchor * ((100 - $this->product_payment->billet_discount) / 100 )) : $this->price_anchor;
     }
 
     /**

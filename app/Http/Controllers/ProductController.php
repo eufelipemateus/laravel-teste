@@ -29,9 +29,9 @@ class ProductController extends Controller
 			'name' => 'required|string',
             'types'=> "required",
             'description'=>"required|string",
-            'price_anchor'=> 'required',
-            'price_promotional'=> 'required',
-            'product_payment_id' => 'exists:App\Models\ProductPayment,id'
+            'price_anchor'=> 'required|numeric',
+            'price_promotional'=> 'required|numeric',
+            'product_payment_id' => 'null|exists:App\Models\ProductPayment,id'
 
 		]);
 		$data = $request->all();
@@ -61,13 +61,14 @@ class ProductController extends Controller
 	public function update($id,Request $request){
 		$product = Product::findOrFail($id);
 
-		$this->validate($request, [
+        $this->validate($request, [
 			'name' => 'required|string',
             'types'=> "required",
             'description'=>"required|string",
-            'price_anchor'=> 'required',
-            'price_promotional'=> 'required',
-            'product_payment_id' => 'exists:App\Models\ProductPayment,id'
+            'price_anchor'=> 'required|numeric',
+            'price_promotional'=> 'required|numeric',
+            'product_payment_id' => 'null|exists:App\Models\ProductPayment,id'
+
 		]);
 
 		$data = $request->all();
