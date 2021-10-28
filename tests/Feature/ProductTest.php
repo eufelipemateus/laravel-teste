@@ -18,7 +18,7 @@ class ProductTest extends TestCase
      */
     public function test_product_model (){
         $product = Product::factory()->make();
-        $this->assertNotInstanceOf(Product::class, $product, "Teste de Model do produto passou na criação do produto.");
+        $this->assertNotNull($product, "A Creiação do produto não passou no teste.");
     }
 
     /**
