@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-						<div class="col-md-7"><b>Group</b></div>
+						<div class="col-md-7"><b>Configuração de Pagamento</b></div>
 						{{-- <div class="col-md-3"><a href="{{ route('') }}"></a></div>
 						<div class="col-md-2"><a href="{{ route('') }}"></a></div>  --}}
 					</div>
@@ -29,7 +29,7 @@
 
 
 						<div class="form-group">
-							<label for="name" class="col-md-4 control-label">Name</label>
+							<label for="name" class="col-md-4 control-label">Nome</label>
 							<div class="col-md-6">
 								<input id="name" type="text"   class="form-control" name="name" value="@if(isset($productPayment->name)){{ $productPayment->name }}@endif" placeholder="" required autofocus>
 							</div>

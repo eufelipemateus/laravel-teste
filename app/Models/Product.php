@@ -9,7 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    private $default_max_portion = 36;
 
     /**
      * The attributes that are mass assignable.
@@ -31,7 +30,16 @@ class Product extends Model
      * @return number
      */
     public function getPortionValueAttribute(){
-        return ($this->price_anchor/$this->max_portion);
+        if(isset($this->product_payment->max_portion)){
+            $portion = ($this->price_anchor / $this->product_payment->max_portion);
+            if($portion>$this->product_payment->min_portion_value){
+                return $portion;
+            }else{
+                return $this->product_payment->min_portion_value;
+            }
+        }else{
+            return 0;
+        }
     }
 
     /**
@@ -58,7 +66,15 @@ class Product extends Model
      * @return number
      */
     public function getMaxPortionAttribute(){
-        return   (isset($this->product_payment->max_portion))? $this->product_payment->max_portion : $this->default_max_portion;
+        if(isset($this->product_payment->min_portion_value)){
+            if($this->portion_value >  $this->product_payment->min_portion_value){
+                return $this->portion_value;
+            }else{
+                return intval($this->price_anchor/ $this->product_payment->min_portion_value) ;
+            }
+        }else{
+            return 0;
+        }
     }
 
 }

@@ -7,10 +7,10 @@
             <div class="card">
                 <div class="card-header">
 					<div class="row">
-						<div class="col-md-7"><b>Products Payments</b></div>
+						<div class="col-md-7"><b>Configurações Pagamentos</b></div>
 
-						<div class="col-md-3"><a href="{{ route('new_payment') }}">Add Payment</a></div>
-						<div class="col-md-2"><a href="{{ route('list_product') }}">List product</a></div>
+						<div class="col-md-3"><a href="{{ route('new_payment') }}">Add Pagamento</a></div>
+						<div class="col-md-2"><a href="{{ route('list_product') }}">Lista de Produtos</a></div>
 					</div>
 				</div>
 
@@ -19,9 +19,9 @@
                         <thead>
                             <tr>
                             <th scope="col">id</th>
-                            <th scope="col">name</th>
+                            <th scope="col">nome</th>
                             <th scope="col">parecelas</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col">ações</th>
                             </tr>
                         </thead>
                         <tbody>

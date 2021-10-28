@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductPayment;
+use App\Http\Requests\Payment;
 
 class PaymentController extends Controller
 {
@@ -21,14 +22,8 @@ class PaymentController extends Controller
      *
      * @return redirect -> list_product
      */
-    public function create(Request $request){
-		$this->validate($request, [
-            'name' => 'required|string',
-            'max_portion'=> 'required|integer|max:36',
-            'pix_discount'=> 'required|integer|min:0|max:100',
-            'billet_discount'=>'required|integer|min:0|max:100',
-            'min_portion_value'=>'required|integer'
-		]);
+    public function create(Payment $request){
+
 		$data = $request->all();
 		ProductPayment::create($data);
 
@@ -53,16 +48,8 @@ class PaymentController extends Controller
      * @param id from pyment
      * @return redirect -> list_payent
      */
-	public function update($id,Request $request){
+	public function update($id,Payment $request){
 		$payment = ProductPayment::findOrFail($id);
-
-		$this->validate($request, [
-			'name' => 'required|string',
-            'max_portion'=> 'required|integer|max:36',
-            'pix_discount'=> 'required|integer|min:0|max:100',
-            'billet_discount'=>'required|integer|min:0|max:100',
-            'min_portion_value'=>'required|integer'
-		]);
 
 		$data = $request->all();
 		$payment->update($data);

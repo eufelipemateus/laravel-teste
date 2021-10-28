@@ -17,14 +17,14 @@
 
 
                     <h2>Cartão de Credito</h2>
-                    <p>{{ $product->max_portion }}x  de {{$product->portion_value }}  </p>
+                    <p>{{ $product->max_portion }}x  de  R$ {{  number_format($product->portion_value,2) }}  </p>
 
                     <h2>Pix</h2>
-                    <p>{{$product->pix_value }}</p>
+                    <p>R$ {{ number_format($product->pix_value,2) }}</p>
 
 
                     <h2>Boleto</h2>
-                    <p>{{ $product->billet_value}}</p>
+                    <p>R$ {{ number_format($product->billet_value,2) }}</p>
 
 
                 </div>

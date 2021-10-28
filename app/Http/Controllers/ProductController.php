@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProductPayment;
 use App\Models\Product;
+use App\Http\Requests\Product as ProductRequest;
 
 class ProductController extends Controller
 {
@@ -24,16 +25,8 @@ class ProductController extends Controller
      *
      * @return redirect -> list_product
      */
-    public function create(Request $request){
-		$this->validate($request, [
-			'name' => 'required|string',
-            'types'=> "required",
-            'description'=>"required|string",
-            'price_anchor'=> 'required|numeric',
-            'price_promotional'=> 'required|numeric',
-            'product_payment_id' => 'null|exists:App\Models\ProductPayment,id'
+    public function create(ProductRequest $request){
 
-		]);
 		$data = $request->all();
 		Product::create($data);
 
@@ -58,18 +51,9 @@ class ProductController extends Controller
      * @param id from product
      * @return redirect -> list_product
      */
-	public function update($id,Request $request){
+	public function update($id,ProductRequest $request){
 		$product = Product::findOrFail($id);
 
-        $this->validate($request, [
-			'name' => 'required|string',
-            'types'=> "required",
-            'description'=>"required|string",
-            'price_anchor'=> 'required|numeric',
-            'price_promotional'=> 'required|numeric',
-            'product_payment_id' => 'null|exists:App\Models\ProductPayment,id'
-
-		]);
 
 		$data = $request->all();
 		$product->update($data);

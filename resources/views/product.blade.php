@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-						<div class="col-md-7"><b>Product</b></div>
+						<div class="col-md-7"><b>Produto</b></div>
 						{{-- <div class="col-md-3"><a href="{{ route('') }}"></a></div>
 						<div class="col-md-2"><a href="{{ route('') }}"></a></div>  --}}
 					</div>
@@ -29,7 +29,7 @@
 
 
 						<div class="form-group">
-							<label for="name" class="col-md-4 control-label">Name</label>
+							<label for="name" class="col-md-4 control-label">Nome</label>
 							<div class="col-md-6">
 								<input id="name" type="text"   class="form-control" name="name" value="@if(isset($product->name)){{ $product->name }}@endif" placeholder="" required autofocus>
                                 @if ($errors->has('name'))
@@ -70,7 +70,7 @@
 						</div>
 
                         <div class="form-group">
-							<label for="price_anchor" class="col-md-4 control-label">Preço Ancora</label>
+							<label for="price_anchor" class="col-md-4 control-label">Preço Âncora</label>
 							<div class="col-md-6">
 								<input id="price_anchor" type="number"   class="form-control" name="price_anchor" value="@if(isset($product->price_anchor)){{ $product->price_anchor }}@endif" placeholder="" required autofocus>
                                 @if ($errors->has('price_anchor'))
@@ -94,7 +94,7 @@
 						</div>
 
                         <div class="form-group">
-							<label for="product_payment_id" class="col-md-4 control-label">Tipo Payment</label>
+							<label for="product_payment_id" class="col-md-4 control-label">Configuração de Pagamento</label>
 							<div class="col-md-6">
 								<select id="product_payment_id"  class="form-control" name="product_payment_id" require >
                                     <option vlaue="null"></option>

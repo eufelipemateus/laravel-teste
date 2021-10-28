@@ -10,6 +10,7 @@ class BuyController extends Controller
     //
 
     public function show($id){
+        setlocale(LC_MONETARY, 'pt_BR');
 
         $product = Product::findOrFail($id);
 
