@@ -18,7 +18,7 @@ class ProductTest extends TestCase
      */
     public function test_product_model (){
         $product = Product::factory()->make();
-        $this->assertNotNull($product, "A Creiação do produto não passou no teste.");
+        $this->assertNotNull($product, "A Criação do produto não passou no teste.");
 
         $this->assertObjectHasAttribute('max_portion',$product, "Parcela maxima não passou no teste");
         $this->assertObjectHasAttribute('billet_value',$product, "Valor do boleto não passou no teste");
