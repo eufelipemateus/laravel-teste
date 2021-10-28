@@ -28,7 +28,7 @@ class PaymenttTest extends TestCase
     {
         $payment = ProductPayment::firstOrFail();
         $payment_id = $payment->id;
-        $response = $this->get('/payment/{id}');
+        $response = $this->get("/payment/$payment_id");
         $response->assertStatus(200);
     }
 }
